@@ -1,5 +1,6 @@
 #include <iostream>
 #include <gtest/gtest.h>
+#define private public
 #include <library.h>
 
 TEST(Construct, Positive) {
@@ -69,7 +70,7 @@ TEST(DistToCenter, NotEqual) {
 
 TEST(Most_Distant_Ox, All) {
     cardioid card(8.76);
-    std::vector<std::pair<double, double>> coords = card.most_distant_from_Ox();
+    std::vector<std::pair<double, double>> coords = card.most_distant_from_o();
     EXPECT_EQ(coords[0].first, card.a * -1.5);
     EXPECT_EQ(coords[0].second, card.a * 3.0 * sqrt(3.0) / 2.0);
     EXPECT_EQ(coords[1].first, card.a * -1.5);
@@ -101,12 +102,12 @@ TEST(CurvatureRadius, All) {
 
 TEST(Area, NotZero){
     cardioid card(7.66);
-    EXPECT_EQ(card.area(), 6 * pi * card.a * card.a);
+    EXPECT_EQ(card.area(), 6 * M_PI * card.a * card.a);
 }
 
 TEST(Area, Zero){
     cardioid card(0);
-    EXPECT_EQ(card.area(), 6 * pi * card.a * card.a);
+    EXPECT_EQ(card.area(), 6 * M_PI * card.a * card.a);
 }
 
 TEST(Length, All){

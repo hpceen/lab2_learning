@@ -23,7 +23,7 @@ int main() {
                       << card.dist_to_center(phi) << std::endl;
         } else if (choice == 3) {
             std::cout << "Координаты наиболее удаленных от оси кардиоиды точек:" << std::endl;
-            print_most_distant(card.most_distant_from_Ox());
+            print_most_distant(card.most_distant_from_o());
         } else if (choice == 4) {
             std::cout << "Радиуса кривизны в характерных точках кардиоиды:" << std::endl;
             std::vector<std::pair<double, double>> coords = card.get_coorsd_characteristic_points();
@@ -31,10 +31,13 @@ int main() {
         } else if (choice == 5) {
             std::cout << "Площадь описываемая кардиоидой: " << card.area() << std::endl;
         } else if (choice == 6) {
-            std::cout << "Введите φ: ";
-            auto phi = get_num<double>();
+            std::cout << "Введите φ (от): ";
+            auto phi1 = get_num<double>();
             std::cout.flush();
-            std::cout << "Длина дуги: " << card.length(phi) << std::endl;
+            std::cout << "Введите φ (до): ";
+            auto phi2 = get_num<double>();
+            std::cout.flush();
+            std::cout << "Длина дуги: " << card.length(phi1, phi2) << std::endl;
         } else if (choice == 0) break;
         else {
             std::cout << "Введено неверное число" << std::endl;

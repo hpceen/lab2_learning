@@ -1,7 +1,5 @@
 #include "library.h"
 
-#include <iostream>
-
 double cardioid::change_r(double new_radius) {
     a = new_radius;
     return new_radius;
@@ -11,7 +9,7 @@ double cardioid::dist_to_center(double phi) const {
     return std::abs(2 * a * (1 - cos(phi)));
 }
 
-std::vector<std::pair<double, double>> cardioid::most_distant_from_Ox() const {
+std::vector<std::pair<double, double>> cardioid::most_distant_from_o() const {
     std::vector<std::pair<double, double>> vertexes;
     vertexes.emplace_back(a * -1.5, a * 3.0 * sqrt(3.0) / 2.0);
     vertexes.emplace_back(a * -1.5, -a * 3.0 * sqrt(3.0) / 2.0);
@@ -45,9 +43,9 @@ cardioid::curvature_radius_of_characteristic_points(std::vector<std::pair<double
 }
 
 double cardioid::area() const {
-    return 6 * pi * a * a;
+    return 6 * M_PI * a * a;
 }
 
-double cardioid::length(double phi) const {
-    return std::abs(8 * a * sin(phi / 2));
+double cardioid::length(double phi1, double phi2) const {
+    return std::abs(8 * a * (sin(phi2 / 2) - sin(phi1 / 2)));
 }

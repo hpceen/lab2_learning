@@ -6,9 +6,9 @@
 template<typename T>
 bool is_correct_get(T &a) {
     std::cin >> a;
-    if (!std::cin.good()) {
+    if (!std::cin.good() || std::cin.eof()) {
         std::cin.clear();
-        std::cin.ignore();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return false;
     }
     return true;
