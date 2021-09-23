@@ -1,4 +1,5 @@
 #include "library.h"
+#include <cmath>
 
 double cardioid::change_r(double new_radius) {
     a = new_radius;
@@ -33,8 +34,9 @@ double cardioid::get_phi(std::pair<double, double> coords) {
 }
 
 std::vector<double>
-cardioid::curvature_radius_of_characteristic_points(std::vector<std::pair<double, double>> vertexes) const {
+cardioid::curvature_radius_of_characteristic_points() const {
     std::vector<double> result;
+    std::vector<std::pair<double, double>> vertexes = get_coorsd_characteristic_points();
     result.reserve(4);
     for (int i = 0; i < 4; ++i) {
         result.push_back(8.0 / 3.0 * a * sin(get_phi(vertexes[i]) / 2.0));

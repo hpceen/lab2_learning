@@ -19,4 +19,4 @@ add_executable(lab2_tests tests.cpp)
 
 ######### links to static libs #########
 include_directories(../lab2_lib/)
-target_link_libraries(lab2_tests gtest_main lab2_lib)
+target_link_libraries(lab2_tests gtest_main lab2_lib m)

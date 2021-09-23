@@ -1,8 +1,6 @@
 #ifndef LAB2_LIB_LIBRARY_H
 #define LAB2_LIB_LIBRARY_H
 
-#include <cmath>
-#include <iostream>
 #include <vector>
 
 //r = 2a (1 – cos (φ))
@@ -11,9 +9,10 @@
 class cardioid {
 private:
     static double get_phi(std::pair<double, double> coords);
+
     double a;
 public:
-    cardioid(){
+    cardioid() {
         a = 0;
     }
 
@@ -27,22 +26,26 @@ public:
         a = card.get_a();
     }
 
-    [[nodiscard]] double get_a() const{return a;}
+    [[nodiscard]] double get_a() const { return a; }
 
-    double change_r(double new_radius);//2 задание (1 пункт)
+    double change_r(double new_radius);//Изменить радиус.
 
-    [[nodiscard]] double dist_to_center(double phi) const;//3 задание (2 пункт)
+    [[nodiscard]] double dist_to_center(
+            double phi) const;//Вернуть расстояние до центра в полярной системе координат в зависимости от угла для точки принадлежащей кардиоиде.
 
-    [[nodiscard]] std::vector<std::pair<double, double>> most_distant_from_o() const;//4 задание (3 пункт)
+    [[nodiscard]] std::vector<std::pair<double, double>>
+    most_distant_from_o() const;//Вернуть координаты наиболее удаленных от оси кардиоиды точек.
 
-    [[nodiscard]] std::vector<std::pair<double, double>> get_coorsd_characteristic_points() const;//5 задание (4 пункт)
+    [[nodiscard]] std::vector<std::pair<double, double>>
+    get_coorsd_characteristic_points() const;//Получение координат характерных точек
 
-    [[nodiscard]]  std::vector<double> curvature_radius_of_characteristic_points(
-            std::vector<std::pair<double, double>> vertexes) const;//5 задание (4 пункт)
+    [[nodiscard]]  std::vector<double>
+    curvature_radius_of_characteristic_points() const;//Вернуть радиуса кривизны в характерных точках кардиоиды.
 
-    [[nodiscard]] double area() const;//6 задание
+    [[nodiscard]] double area() const;//Вернуть площадь описываемую кардиоидой.
 
-    [[nodiscard]] double length(double phi1, double phi2) const;//7 задание
+    [[nodiscard]] double
+    length(double phi1, double phi2) const;//Вернуть длину дуги кардиоиды в зависимости от угла полярного радиуса.
 
 };
 
