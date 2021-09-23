@@ -7,7 +7,7 @@
 template<typename T>
 bool is_correct_get(T &a) {
     std::cin >> a;
-    if (std::cin.eof()) throw std::runtime_error("EOF");
+    if (std::cin.eof()) throw std::logic_error("EOF");
     if (!std::cin.good()) {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -25,7 +25,7 @@ T get_num() {
         }
     }
 
-    catch (const std::runtime_error &err) {
+    catch (const std::logic_error &err) {
         std::cout << "Ошибка: " << err.what() << std::endl;
         exit(-1);
     }
