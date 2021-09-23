@@ -26,7 +26,7 @@ T get_num() {
     }
 
     catch (const std::logic_error &err) {
-        std::cout << "Ошибка: " << err.what() << std::endl;
+        std::cout << "\n" << err.what() << std::endl;
         exit(-1);
     }
     return num;
