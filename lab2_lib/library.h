@@ -36,8 +36,7 @@ public:
     [[nodiscard]] std::vector<std::pair<double, double>>
     most_distant_from_o() const;//Вернуть координаты наиболее удаленных от оси кардиоиды точек.
 
-    [[nodiscard]] std::vector<std::pair<double, double>>
-    get_coorsd_characteristic_points() const;//Получение координат характерных точек
+    [[nodiscard]] std::vector<std::pair<double, double>> get_coords_characteristic_points() const;//Получение координат характерных точек
 
     [[nodiscard]]  std::vector<double>
     curvature_radius_of_characteristic_points() const;//Вернуть радиуса кривизны в характерных точках кардиоиды.

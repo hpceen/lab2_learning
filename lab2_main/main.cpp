@@ -26,7 +26,7 @@ int main() {
             print_most_distant(card.most_distant_from_o());
         } else if (choice == 4) { //Радиус кривизны в характерных точках
             std::cout << "Радиуса кривизны в характерных точках кардиоиды:" << std::endl;
-            print_curv_r_of_char_p(card.get_coorsd_characteristic_points(), card.curvature_radius_of_characteristic_points());
+            print_curv_r_of_char_p(card.get_coords_characteristic_points(), card.curvature_radius_of_characteristic_points());
         } else if (choice == 5) { //Площадь кардиоиды
             std::cout << "Площадь описываемая кардиоидой: " << card.area() << std::endl;
         } else if (choice == 6) { //Нахождение длины дуги От До

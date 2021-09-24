@@ -80,7 +80,7 @@ TEST(Most_Distant_Ox, All) {
 
 TEST(CharacteristicPoints, All) {
     cardioid card(7.55);
-    std::vector<std::pair<double, double>> coords = card.get_coorsd_characteristic_points();
+    std::vector<std::pair<double, double>> coords = card.get_coords_characteristic_points();
     EXPECT_DOUBLE_EQ(coords[0].first, 0);
     EXPECT_DOUBLE_EQ(coords[0].second, 0);
     EXPECT_DOUBLE_EQ(coords[1].first, 0);
@@ -93,7 +93,7 @@ TEST(CharacteristicPoints, All) {
 
 TEST(CurvatureRadius, All) {
     cardioid card(9.65);
-    std::vector<std::pair<double, double>> vertexes = card.get_coorsd_characteristic_points();
+    std::vector<std::pair<double, double>> vertexes = card.get_coords_characteristic_points();
     std::vector<double> curv_rads = card.curvature_radius_of_characteristic_points();
     EXPECT_DOUBLE_EQ(curv_rads[0], 8.0 / 3.0 * card.a * sin(card.get_phi(vertexes[0]) / 2.0));
     EXPECT_DOUBLE_EQ(curv_rads[1], 8.0 / 3.0 * card.a * sin(card.get_phi(vertexes[1]) / 2.0));

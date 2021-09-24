@@ -17,7 +17,7 @@ std::vector<std::pair<double, double>> cardioid::most_distant_from_o() const {
     return vertexes;
 }
 
-std::vector<std::pair<double, double>> cardioid::get_coorsd_characteristic_points() const {
+std::vector<std::pair<double, double>> cardioid::get_coords_characteristic_points() const {
     std::vector<std::pair<double, double>> result;
     result.emplace_back(0, 0);
     result.emplace_back(0, 2 * a);
@@ -36,7 +36,7 @@ double cardioid::get_phi(std::pair<double, double> coords) {
 std::vector<double>
 cardioid::curvature_radius_of_characteristic_points() const {
     std::vector<double> result;
-    std::vector<std::pair<double, double>> vertexes = get_coorsd_characteristic_points();
+    std::vector<std::pair<double, double>> vertexes = get_coords_characteristic_points();
     result.reserve(4);
     for (int i = 0; i < 4; ++i) {
         result.push_back(8.0 / 3.0 * a * sin(get_phi(vertexes[i]) / 2.0));
